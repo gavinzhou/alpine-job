@@ -32,7 +32,7 @@ for path in $dockerfiles; do
   # Generate a tag by replacing the first slash with a colon and all remaining slashes with a dash.
   tag=$(echo $path | sed 's@/@:@' | sed 's@/@-@g')
   log_msg "Building docker image $tag (from $path)"
-  if ! docker_build -t "orangesys/alpine-httpie:${tag}" "$path"; then
+  if ! docker_build -t "orangesys/alpine-job:${tag}" "$path"; then
     failed_builds+=("$tag")
   fi
 done
