@@ -1,9 +1,10 @@
-FROM alpine:latest
+FROM alpine:3.4
 MAINTAINER gavin zhou <gavin.zhou@gmail.com>
 
 RUN apk update && apk add \
 	ca-certificates \
 	python \
 	py-pip \
+	mysql-client \
 	&& rm -rf /var/cache/apk/*
-RUN pip install httpie httpie-unixsocket httpie-oauth httpie-http2
+RUN pip install httpie httpie-unixsocket httpie-oauth httpie-http2 PyJWT uuid
