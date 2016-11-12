@@ -5,8 +5,8 @@ RUN apk update && apk add \
   ca-certificates \
   python \
   py-pip \
-  mysql-client wget git \
+  mysql-client wget git curl tar \
   && rm -rf /var/cache/apk/* \
   && pip install httpie httpie-unixsocket httpie-oauth httpie-http2 PyJWT uuid \
-  && wget -q https://storage.googleapis.com/kubernetes-release/release/v1.4.3/bin/linux/amd64/kubectl -O /usr/bin/kubectl \
+  && wget -q https://storage.googleapis.com/kubernetes-release/release/v1.4.5/bin/linux/amd64/kubectl -O /usr/bin/kubectl \
   && chmod +x /usr/bin/kubectl
