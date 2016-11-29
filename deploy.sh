@@ -20,7 +20,7 @@ for path in $dockerfiles; do
   # Generate a tag by replacing the first slash with a colon and all remaining slashes with a dash.
   tag=$(echo $path | sed 's@/@:@' | sed 's@/@-@g')
   log_msg "Tagging docker image $tag with gcr tag"
-  docker tag "orangesys/alpine-job:${tag}" "asia.gcr.io/orange-sys/alpine-job:${tag}"
-  sudo /opt/google-cloud-sdk/bin/gcloud docker push asia.gcr.io/orange-sys/alpine-job:${tag}
+  docker tag "orangesys/alpine-job:${tag}" "asia.gcr.io/saas-orangesys-io/alpine-job:${tag}"
+  sudo /opt/google-cloud-sdk/bin/gcloud docker -- push asia.gcr.io/saas-orangesys-io/alpine-job:${tag}
 
 done
